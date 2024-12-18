@@ -76,7 +76,6 @@ jobs:
           cache-to: type=inline,mode=max
 
       - name: Scan the Docker image
-        run: trivy image --scanners vuln --ignore-unfixed --severity HIGH,CRITICAL Hk574/final_project_user_management:${{ github.sha }}
         uses: aquasecurity/trivy-action@master
         with:
           image-ref: 'hk574/final_project_user_management:${{ github.sha }}'
