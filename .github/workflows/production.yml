@@ -75,10 +75,15 @@ jobs:
           cache-from: type=registry,ref=hk574/final_project_user_management:cache
           cache-to: type=inline,mode=max
           
-      - name: Pull Docker image (debugging)
-        run: docker pull hk574/final_project_user_management:${{ github.sha }}
-        
+       - name: Cache Trivy database
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/trivy
+          key: ${{ runner.os }}-trivy-db
+
       - name: Scan the Docker image
+        run: |
+          trivy image --scanners vuln --ignore-unfixed --severity HIGH,CRITICAL Hk574/final_project_user_management:${{ github.sha }}
         uses: aquasecurity/trivy-action@master
         with:
           image-ref: 'hk574/final_project_user_management:${{ github.sha }}'
