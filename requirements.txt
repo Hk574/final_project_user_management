@@ -1,12 +1,3 @@
-The error indicates that FastAPI version 0.135.2 doesn't exist. Let's update to the latest version:
-
-Updated Requirements
-
-Replace fastapi==0.135.2 with fastapi==0.115.6 (latest as of Dec 2024).
-
-Requirements.txt
-
-
 aiofiles==23.2.1
 aiomysql==0.2.0
 alembic==1.13.1
