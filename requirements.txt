@@ -19,7 +19,7 @@ email-validator==2.1.1
 exceptiongroup==1.2.0
 factory-boy==3.3.0
 Faker==24.4.0
-fastapi==0.134.1
+fastapi==0.135.2
 greenlet==3.0.3
 gunicorn==22.0.0
 h11==0.14.0
